@@ -1,20 +1,57 @@
 <form>
     <div class="row">
-        <div class="col-3" style="border: solid 2px ;">
-            <mat-nav-list>
-                <a mat-list-item href="#" ><mat-icon class="right-icon-spacer">people</mat-icon> User1 </a>
-                <a mat-list-item href="#" ><mat-icon class="right-icon-spacer">people</mat-icon> User2 </a>
-                <a mat-list-item href="#" ><mat-icon class="right-icon-spacer">people</mat-icon> User3 </a>
+        <div class="col-3" >
+            <mat-nav-list *ngFor="let p of folders">
+                <mat-card style="padding: 0%; border-radius: 0%;">
+                    <a mat-list-item href="#" ><mat-icon>account_circle</mat-icon> {{p.name}} </a>
+                </mat-card>
              </mat-nav-list>
         </div>
-        <div class="col-9" style="border: solid 9px ;">
+        <div class="col-9" >
 
             <form class="example-form">
-                <mat-form-field  style="margin-left: 3em;" >
-                  <input matInput placeholder="Write a message....">
-                </mat-form-field>
-                
-              </form>
+                <button mat-raised-button color="primary"><mat-icon>mail</mat-icon>SEND</button>
+                <mat-form-field  style="margin-left: 1em;width: 50em;"  >
+                  <input matInput placeholder="Write a message...." >
+                </mat-form-field>               
+            </form>
+            <div>
+                <mat-card>
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-1">  
+                                <img mat-card-avatar src="http://localhost/api-gclms/uploads/students/201910734/modern-pink-trifold-business-brochure-template_23-2147765752.jpg">
+                            </div>
+                            <div class="col-11">
+                                <a href="#">Riejan Eguita</a>
+                                <p ><mat-icon style="font-size: 1em;">schedule</mat-icon>3:13pm</p>
+                            </div>   
+                        </div>
+                        <div>
+                            <p>Sample Message</p>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <br>
+            <div>
+                <mat-card>
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-1">  
+                                <img mat-card-avatar src="http://localhost/api-gclms/uploads/students/201910734/modern-pink-trifold-business-brochure-template_23-2147765752.jpg">
+                            </div>
+                            <div class="col-11">
+                                <a href="#">Riejan Eguita</a>
+                                <p ><mat-icon style="font-size: 1em;">schedule</mat-icon>3:13pm</p>
+                            </div>   
+                        </div>
+                        <div>
+                            <p>Another Message</p>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </div>
 </form>
