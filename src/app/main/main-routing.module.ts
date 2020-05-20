@@ -8,6 +8,7 @@ import { ProfileComponent } from '../profile/profile.component';
 import { StudentListComponent } from '../student-list/student-list.component';
 import { ClassroomComponent } from '../classroom/classroom.component';
 import { AuthGuard } from '../services/auth.guard';
+import { MessageComponent } from '../message/message.component';
 
 export const MainRoutes: Routes = [
   //CLASSROOM SUBCOMPONENTS ROUTING:
@@ -20,6 +21,7 @@ export const MainRoutes: Routes = [
   { path: 'forums', component: ForumsComponent, canActivate: [AuthGuard] },
   { path: 'student-list', component: StudentListComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'message', component: MessageComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
 ];
 

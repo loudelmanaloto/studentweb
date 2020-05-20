@@ -17,11 +17,13 @@ import { LoginComponent } from './login/login.component';
 import { ManageAnnouncementComponent } from './manage-announcement/manage-announcement.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     // MainComponent,
-    LoginComponent
+    LoginComponent,
+
     
   ],
   imports: [

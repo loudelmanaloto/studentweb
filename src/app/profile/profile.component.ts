@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getData(){
-    this.ds.pull('studentinfo/' + '201910734', '').subscribe((res: any) => {
+    this.ds.pull('studentinfo/' + this.user.getUserID(), '').subscribe((res: any) => {
       this.student_obj = res.payload;
       this.v_image = this.student_obj[0].s_img;
     }, er => {

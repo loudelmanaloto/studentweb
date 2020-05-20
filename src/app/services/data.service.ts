@@ -7,7 +7,7 @@ import { UserService } from './user.service';
 })
 export class DataService {
 
-  private url: string = "http://localhost/api-gclmsweb/";
+  private url: string = "http://localhost/api-gclms/";
 
   constructor(private http: HttpClient, private user: UserService) { }
 

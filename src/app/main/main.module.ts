@@ -23,17 +23,20 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 
+
+
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { AnnouncementsComponent } from '../announcements/announcements.component';
 import { ClassesComponent } from '../classes/classes.component';
 import { ForumsComponent } from '../forums/forums.component';
-import { ProfileComponent } from '../profile/profile.component';
+import { ProfileComponent, DialogOverviewExampleDialog } from '../profile/profile.component';
 import { StudentListComponent } from '../student-list/student-list.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ManageAnnouncementComponent } from '../manage-announcement/manage-announcement.component';
 import { ClassroomComponent } from '../classroom/classroom.component';
 import { MatRippleModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { MessageComponent } from '../message/message.component';
 
 @NgModule({
   imports: [
@@ -59,7 +62,7 @@ import { FormsModule } from '@angular/forms';
     MatTabsModule,
     ClipboardModule,
     MatTooltipModule,
-    MatMenuModule,
+    MatMenuModule
   ],
   declarations: [
     MainComponent,
@@ -71,6 +74,8 @@ import { FormsModule } from '@angular/forms';
     StudentListComponent,
     ManageAnnouncementComponent,
     ClassroomComponent,
+    DialogOverviewExampleDialog,
+    MessageComponent
   ],
   entryComponents: [ManageAnnouncementComponent],
 })
