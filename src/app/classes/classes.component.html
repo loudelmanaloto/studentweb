@@ -1,0 +1,20 @@
+<div class="class-container">
+  <mat-card
+    *ngFor="let classlist of classes; let i = index"
+    button
+    (click)="viewclass(i)"
+  >
+    <mat-card-header>
+      <mat-card-title>{{ classlist.cl_desc }}</mat-card-title>
+      <mat-card-subtitle>{{ classlist.cl_block }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content> </mat-card-content>
+    <mat-card-footer>
+      <h4>
+        <span style="font-weight: 500;">Instructor: </span
+        >{{ classlist.f_fname + " " + classlist.f_lname }}
+      </h4>
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </mat-card-footer>
+  </mat-card>
+</div>

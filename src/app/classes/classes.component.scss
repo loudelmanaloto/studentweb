@@ -1,0 +1,29 @@
+.class-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+mat-card {
+  padding-bottom: 0;
+  margin-right: 2rem;
+  width: 25rem;
+  mat-card-header {
+    margin-top: 1rem;
+  }
+}
+mat-card-footer {
+  background-color: #1462ff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h4 {
+    margin: 0;
+    padding: 0.5rem;
+  }
+}

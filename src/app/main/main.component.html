@@ -1,0 +1,61 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="side" [(opened)]="isOpen">
+    <div class="img-container">
+      <img src="assets/logo_gc.png" alt="" class="side-img">
+    </div>
+    <hr class="rounded">
+    <mat-list>
+      <mat-nav-list>
+        <a matLine routerLink="dashboard" routerLinkActive="is-active">
+          <mat-list-item>
+            <mat-icon class="right-icon-spacer">dashboard</mat-icon>
+            Dashboard
+          </mat-list-item>
+        </a>
+      </mat-nav-list>
+
+      <mat-nav-list>
+        <a matLine routerLink="announcements" routerLinkActive="is-active">
+          <mat-list-item>
+            <mat-icon class="right-icon-spacer">announcements</mat-icon>
+            Announcements
+          </mat-list-item>
+        </a>
+      </mat-nav-list>
+
+      <mat-nav-list>
+        <a matLine routerLink="classes" routerLinkActive="is-active">
+          <mat-list-item>
+            <mat-icon class="right-icon-spacer">classes</mat-icon>
+            Classes
+          </mat-list-item>
+        </a>
+      </mat-nav-list>
+
+      <mat-nav-list>
+        <a matLine routerLink="forums" routerLinkActive="is-active">
+          <mat-list-item>
+            <mat-icon class="right-icon-spacer">forums</mat-icon>
+            Forums
+          </mat-list-item>
+        </a>
+      </mat-nav-list>
+
+      <mat-nav-list>
+        <a matLine routerLink="student-list" routerLinkActive="is-active">
+          <mat-list-item>
+            <mat-icon class="right-icon-spacer">people</mat-icon>
+            Students List
+          </mat-list-item>
+        </a>
+      </mat-nav-list>
+     </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-navbar></app-navbar>
+    <div class="gc-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

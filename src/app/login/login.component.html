@@ -1,0 +1,24 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="./assets/logo_gc.png" id="icon" alt="User Icon" />
+        <h3><strong>GORDON COLLEGE<br>Learning Management System</strong></h3>
+      </div>
+  
+      <!-- Login Form value="201910734" value="aquino" -->
+      <form (submit)="onSubmit($event)" ngNativeValidate>
+        <input value="H1359" type="text" id="param1" class="fadeIn second" name="param1" required placeholder="Student Number">
+        <input value="Aa1234567" type="password" id="param2" class="fadeIn third" name="param2" required placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>

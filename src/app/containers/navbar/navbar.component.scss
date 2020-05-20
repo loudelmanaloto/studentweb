@@ -1,0 +1,31 @@
+mat-toolbar {
+  background-color: rgba($color: #e3f5e4, $alpha: 1) !important;
+  box-shadow: 0px 0 10px black;
+}
+
+.gc-container {
+  padding: 10px 10px 10px 10px !important;
+}
+
+.gc-icon {
+  padding: 0 14px;
+}
+
+.gc-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-button {
+  border: unset !important;
+  background-color: unset !important;
+}
+
+.nav-button :focus {
+  outline-color: unset !important;
+  outline: none !important;
+}
+
+button:focus, button:active:focus, button.active:focus {
+  outline: none !important;
+  outline-style: none !important;
+}

@@ -1,0 +1,18 @@
+<mat-toolbar style="height: 50px !important">
+  Gordon College Learning Management System - Admin Panel
+
+  <span class="gc-spacer"></span>
+  <button mat-icon-button class="nav-button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="profile">
+      <mat-icon>face</mat-icon>
+      <span>Juan Dela Cruz</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

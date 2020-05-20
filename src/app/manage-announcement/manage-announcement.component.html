@@ -1,0 +1,48 @@
+
+   
+     
+     <div style="display: flex; justify-content: flex-end;" >
+            <mat-icon matRipple (click)="Close()"  style="cursor: pointer;">close</mat-icon>
+         </div>   
+      <h1 mat-dialog-title>{{data.title}}</h1>  
+      
+            <!-- <form (submit)="onSubmit($event)" >
+                
+                
+                <input #uploadfile type="file" style="display: none" (change)="onFileSelect($event)">
+                <mat-icon matRipple (click)="uploadfile.click()"  style="cursor: pointer;">add_a_photo</mat-icon>  
+               
+            </form>               -->
+
+            <form (submit)="onSubmit($event)" ngNativeValidate>
+                <mat-form-field >
+                    <mat-label>Title</mat-label>
+                    <input id="title" matInput placeholder="Title" value="{{data.record.an_title}}" required >  
+                </mat-form-field>     
+                <br>
+                <mat-form-field class="textareaheight">
+                    <mat-label>Content</mat-label>
+                    <textarea id="content" matInput placeholder="Content" rows="10" cols="40" value="{{data.record.an_content}}" required  ></textarea>
+                </mat-form-field>
+
+                <div *ngIf="withimg==1&&data.record==0">
+                    <img style="max-width: 80px; max-height: 50px; padding-bottom: 3px;" [src]="imgdir" alt="">
+                </div>
+                
+                <div *ngIf="data.isEdit==1&&data.record.an_withimg==1">
+                    <img style="max-width: 80px; max-height: 50px; padding-bottom: 3px;" [src]="imgdir" alt="">
+                </div>
+                
+                <input #uploadfile type="file" style="display: none" (change)="onFileSelect($event)">
+                <mat-icon matRipple (click)="uploadfile.click()"  style="cursor: pointer;">add_a_photo</mat-icon>  
+               
+                
+                <mat-dialog-actions style="justify-content: flex-end;">
+                    <button class="mat-raised-button" type="reset">Clear</button>
+                    <button class="mat-raised-button mat-primary" type="submit">Post</button>
+                </mat-dialog-actions>
+            </form>
+           
+        
+    
+  

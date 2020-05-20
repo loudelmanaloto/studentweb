@@ -1,0 +1,117 @@
+mat-card {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 60%;
+}
+.post-input {
+  display: flex;
+  justify-content: center;
+  p {
+    text-align: left;
+  }
+}
+
+.avatar {
+  float: left;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 3;
+  border-radius: 50%;
+  bottom: 1.7rem;
+  box-shadow: 0 3px 6px;
+}
+
+.profile-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+mat-action-list {
+  width: 85%;
+  span {
+    padding-left: 55px;
+  }
+  button {
+    background-color: #f2f2f2;
+    border-radius: 3rem;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar-activities {
+  margin-left: 1.5rem;
+  width: 35%;
+  height: 100%;
+}
+
+.card-action {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.post-cards {
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  background-color: #f2f2f2;
+}
+
+.act-con {
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  mat-card-title span {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    mat-icon {
+      margin-right: 0.3rem;
+    }
+  }
+  mat-card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  mat-card-content {
+    margin: 0 16px;
+  }
+}
+#comment-section {
+  width: auto;
+  box-shadow: none;
+  border: 1px solid gainsboro;
+  margin-top: 0;
+  background-color: inherit;
+  padding-top: inherit;
+}
+
+.comments-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.commentbox {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem 0;
+  .comment-input {
+    padding-left: 0.7rem;
+    border-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: inherit;
+  }
+}

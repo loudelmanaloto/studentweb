@@ -1,0 +1,149 @@
+<mat-tab-group mat-align-tabs="center" animationDuration="100ms">
+  <!-- CLASSFEED TABS -->
+  <mat-tab label="Class feed">
+    <div class="conts">
+      <div class="header">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h1>
+                {{ subject[1] }}
+              </h1>
+            </mat-card-title>
+            <mat-card-title style="font-weight: 300;">{{
+              subject[2]
+            }}</mat-card-title>
+            <mat-card-subtitle>
+              <b>Class code:</b> {{ subject[0] }}
+              <button (click)="copycode()" [cdkCopyToClipboard]="subject[0]" style="left: -0.5rem;" mat-icon-button>
+                <mat-icon matTooltip="Copy the Classcode">open_in_new</mat-icon>
+              </button>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <div (click)="postActivity()" *ngIf="show" class="post-input">
+            <mat-action-list>
+              <img src="https://placekitten.com/100/100" alt="avatar" class="avatar" />
+              <button mat-list-item>
+                <span>Post something great..</span>
+              </button>
+            </mat-action-list>
+          </div>
+
+          <div *ngIf="showpost">
+            <mat-form-field style="width: 100%;" appearance="fill">
+              <mat-label>Share on your class</mat-label>
+              <textarea [(ngModel)]="content" cdkTextareaAutosize rows="6" matInput required></textarea>
+              <mat-hint>Anything you want to share in your class.</mat-hint>
+            </mat-form-field>
+            <mat-card-actions class="card-action">
+              <div>
+                <button disabled (click)="file.click(onOpenFile())" mat-stroked-button color="primary">
+                  <input type="file" hidden name="attachments" #file required />
+                  <mat-icon>attach_file</mat-icon>ADD ATTACHMENTS
+                </button>
+              </div>
+              <div>
+                <button (click)="cancel()" mat-button>CANCEL</button>
+                <button mat-raised-button (click)="share()" color="primary">
+                  SHARE
+                </button>
+              </div>
+            </mat-card-actions>
+          </div>
+        </mat-card>
+
+        <mat-card class="calendar-activities">
+          <mat-card-header>
+            <mat-card-title style="font-size: medium;">Scheduled Activities</mat-card-title>
+            <!-- <mat-card-subtitle>No Activities yet.</mat-card-subtitle> -->
+          </mat-card-header>
+          <mat-card-content>
+            <ul style="padding: 0;" *ngFor="let act of activities">
+              <li style="list-style: none;">
+                {{ act.act_title }}
+                <span style="font-weight: lighter; float: right;">Due: {{ act.act_deadline | date: "MMMM d" }}</span>
+              </li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="posts">
+        <mat-card *ngFor="let posts of postObject; let i = index" class="post-cards">
+          <mat-card-header>
+            <img mat-card-avatar src="https://placekitten.com/100/100" alt="avatar" class="profile-avatar" />
+            <mat-card-title style="font-size: medium;">
+              {{ posts.s_fname + " " + posts.s_lname }}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{ posts.cp_timestamp | date: "MMMM d, y" }}
+            </mat-card-subtitle>
+            <span style="flex: 1 1 auto;"></span>
+            <button [matMenuTriggerFor]="cf" mat-icon-button>
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              {{ posts.cp_content }}
+            </p>
+          </mat-card-content>
+          <mat-list style="padding-top: 0;">
+            <hr>
+            <mat-list-item style="height: auto; margin-bottom: 1rem;" *ngFor="let comment of posts.postcomments;">
+              <img matListAvatar src="https://placekitten.com/100/100" alt="avatart">
+              <h3 matLine> {{ comment.f_fname + " " + comment.f_lname }} <span style="font-size: small; color: grey;">•
+                  {{ comment.cc_timestamp | date: "MMMM d"}}</span> </h3>
+              <p matLine> <span> {{comment.cc_content}} </span> </p>
+            </mat-list-item>
+            <hr>
+          </mat-list>
+
+          <mat-card-footer>
+            <form (submit)="pushComment(i, $event)">
+              <div class="form-group commentbox">
+                <img mat-card-avatar src="https://placekitten.com/100/100" alt="avatar" class="comments-avatar" />
+                <input name="commentbox" type="text" class="form-control form-control-sm comment-input"
+                  placeholder="Write a comment...">
+                <button color="primary" type="submit" mat-icon-button>
+                  <mat-icon>send</mat-icon>
+                </button>
+              </div>
+            </form>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
+
+  <!--END CLASSFEED TABS -->
+  <mat-tab label="Activities">
+    <div class="act-con">
+      <mat-card *ngFor="let act of activities">
+        <mat-card-header>
+          <mat-card-title><span>
+              <mat-icon>assignment</mat-icon> {{ act.act_title }}
+            </span></mat-card-title>
+          <mat-card-subtitle>
+            Deadline:
+            {{ act.act_deadline | date: "MMMM d, y" }}</mat-card-subtitle>
+          <button [matMenuTriggerFor]="activity" mat-icon-button>
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </mat-card-header>
+        <mat-card-content> {{ act.act_desc }} </mat-card-content>
+        <mat-card-actions>
+          <!-- <button mat-button>Ok</button> -->
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-menu #cf="matMenu" xPosition="before">
+    <button mat-menu-item>Edit</button>
+    <button mat-menu-item>Delete</button>
+  </mat-menu>
+  <mat-menu #activity="matMenu" xPosition="before">
+    <button mat-menu-item>Edit</button>
+    <button mat-menu-item>Delete</button>
+  </mat-menu>
+</mat-tab-group>

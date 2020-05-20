@@ -1,0 +1,72 @@
+mat-sidenav-container {
+  height: 100vh;
+}
+
+mat-sidenav-content {
+  background-color: rgb(235, 233, 233) !important;
+}
+
+mat-sidenav {
+  background-color: darkgreen;
+  width: 200px;
+  color: white;
+  box-shadow: 0px 0 10px black;
+}
+
+mat-list-item {
+  color: white !important;
+}
+
+.gc-container {
+  width: 100;
+  padding: 20px 30px;
+  margin: auto;
+}
+
+.img-container  {
+  text-align: center;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.side-img {
+  width: 80%;
+}
+
+.right-icon-spacer {
+  margin-right: 5px;
+}
+
+[class^='mat-list-'] {
+  &:hover:active {
+    background: rgba(255, 4, 4, 0.04) !important;
+  }
+  &:focus,
+  .mat-list-text {
+    background: none !important;
+  }
+}
+
+[mat-menu-item].is-active,
+[mat-list-item].is-active {
+  background: hsla(0, 73%, 60%, 0.1) !important;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 3 px;
+}
+
+hr.rounded {
+  border-top: 3px solid white;
+  border-radius: 5px
+}
+
+
+.isactive {
+  color: yellow !important;
+}
+
+ng-reflect-router-link-active {
+  color: yellow !important;
+}

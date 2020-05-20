@@ -1,0 +1,115 @@
+<!-- <div style="padding-top: 30px;">
+  <mat-card style="padding: 0;">
+    <mat-card-title
+      style="
+        padding-left: 5px;
+        padding-top: 20px;
+        margin-bottom: 0;
+        padding-bottom: 0px;
+        flex-direction: row;
+      "
+    >
+      <div style="display: flex; justify-content: space-between;">
+        <div style="margin-top: 12px; margin-left: 7px;">
+          Announcements
+        </div>
+        <div style="margin-right: 15px;">
+          <mat-form-field style="padding-top: 0;">
+            <input
+              matInput
+              (keyup)="applyFilter($event)"
+              placeholder="Search"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-title>
+    <hr style="margin: 0;" />
+    <mat-card-subtitle
+      style="padding-left: 5px; padding-bottom: 0px; flex-direction: row;"
+    >
+      <div style="display: flex; justify-content: space-between;">
+        <div style="margin-top: 12px; margin-left: 7px;">
+          {{ totalpost }} Posted
+        </div>
+        <div style="margin-right: 15px;">
+          <button
+            (click)="onAdd()"
+            class="right-icon"
+            mat-icon-button
+            color="primary"
+            aria-label="add button"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-subtitle> -->
+<div>
+  <mat-card class="table-header">
+    <h1>Announcements</h1>
+
+    <div style="display: flex;">
+      <div class="form-group search-form">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input (keyup)="applyFilter($event)" type="text" class="form-control search-input" placeholder="Search...">
+      </div>
+      <span style="flex: 1 1 auto;"></span>
+      <button style=" margin-right: 1rem;" (click)="onAdd()" mat-mini-fab color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <mat-table #table [dataSource]="dataSource">
+      <ng-container matColumnDef="an_imgdir">
+        <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+        <mat-cell class="announcement-image" *matCellDef="let element">
+          <img class="mat-elevation-z2 thumbnails" *ngIf="element.an_withimg == 1 && element.an_imgdir != ''"
+            [src]="'http://localhost/api-gclmsweb/' + element.an_imgdir" alt="image-preview" />
+          <img class="mat-elevation-z2 thumbnails" *ngIf="element.an_imgdir == ''" src="/assets/noimage.png"
+            alt="image-preview" />
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="an_title">
+        <mat-header-cell *matHeaderCellDef>
+          Announcement
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.an_title }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container class="date-cell" matColumnDef="an_timestamp">
+        <mat-header-cell class="data-cell-header" *matHeaderCellDef>
+          Date
+        </mat-header-cell>
+        <mat-cell class="date-cell" *matCellDef="let element">
+          {{ element.an_timestamp | date }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="commentcount">
+        <mat-header-cell *matHeaderCellDef> Comments </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <mat-icon style="margin-right: 0.5rem; color: grey;">chat_bubble_outline</mat-icon>
+          {{ element.commentcount }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a class="t-edit">View</a>
+          <span style="margin: 0 5px;">|</span>
+          <a class="t-edit" (click)="onEdit(element)">Edit</a>
+          <span style="margin: 0 5px;">|</span>
+          <a class="t-edit">Delete</a>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </mat-card>
+</div>
