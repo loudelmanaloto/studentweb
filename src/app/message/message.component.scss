@@ -1,0 +1,83 @@
+.recipient {
+  width: 30%;
+  padding: 1rem;
+  z-index: 1;
+  border-right: 0.5px solid #eeeded;
+}
+
+.recipient header {
+  padding-left: 1rem;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-container {
+  display: flex;
+}
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: inherit;
+}
+
+.message-box header {
+  background-color: #01a3a4;
+  font-weight: 500;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.mat-list-item-content {
+  padding: 0 !important;
+}
+
+.commentbox {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem 0;
+  .comment-input {
+    padding-left: 0.7rem;
+    border-radius: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+  }
+}
+
+.discussion {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+.discussion > .bubble {
+  border-radius: 1em;
+  padding: 0.25em 0.75em;
+  margin: 0.0725em;
+  max-width: 50%;
+}
+
+.discussion > .bubble.sender {
+  align-self: flex-end;
+  background-color: #44bec7;
+  color: #fff;
+}
+.discussion > .bubble.recipient {
+  align-self: flex-start;
+  background-color: #efefef;
+}
+
+.chat-box {
+  padding: 1rem;
+}
