@@ -7,7 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { ManageAnnouncementComponent } from '../manage-announcement/manage-announcement.component';
-
+// sdasd
 @Component({
   selector: 'app-announcements',
   templateUrl: './announcements.component.html',
